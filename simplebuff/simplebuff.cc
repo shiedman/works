@@ -1,3 +1,4 @@
+#include <sys/mman.h> //for mmap
 #include <string.h>
 #include <node.h>
 #include <v8.h>
@@ -20,7 +21,9 @@ Handle<Value> SimpleBuff::New(const Arguments &args) {
 SimpleBuff::SimpleBuff(Handle<Object> wrapper, size_t length):ObjectWrap(){
     Wrap(wrapper);
     length_ = length;
-    data_ = new char[length_];
+    int prot = PROT_READ | PROT_WRITE;
+    int flags = MAP_ANON | MAP_PRIVATE;
+    data_ = static_cast<char*>(mmap(NULL,length_,prot,flags,-1,0));
     //set data_ to 0, force memory allocated
     memset(data_,0,length_);
     //set indexed properties 
@@ -34,7 +37,7 @@ SimpleBuff::SimpleBuff(Handle<Object> wrapper, size_t length):ObjectWrap(){
     created++;
 }
 SimpleBuff::~SimpleBuff(){
-    delete [] data_;
+    munmap(data_,length_);
     //notify v8 that external memory freed
     V8::AdjustAmountOfExternalAllocatedMemory(
              -static_cast<intptr_t>(sizeof(SimpleBuff) + length_));
