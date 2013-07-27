@@ -1,0 +1,122 @@
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+/* posts index */
+.post > h3.title {
+  position: relative;
+  padding-top: 10px;
+}
+.post > h3.title span.date {
+  position: absolute;
+  right: 0;
+  font-size: 0.9em;
+}
+.post > .more {
+  margin: 10px 0;
+  text-align: left;
+}
+/* post-full*/
+.post-full .date {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+/* tag_box */
+.tag_box {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+}
+.tag_box li {
+  line-height: 28px;
+}
+.tag_box li i {
+  opacity: 0.9;
+}
+.tag_box a {
+  padding: 3px 6px;
+  margin: 2px;
+  background: #eee;
+  color: #555;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px dashed #cccccc;
+}
+.tag_box a span {
+  vertical-align: super;
+  font-size: 0.8em;
+}
+.tag_box a:hover {
+  background-color: #e5e5e5;
+}
+.tag_box a.active {
+  background: #57A957;
+  border: 1px solid #4c964d;
+  color: #FFF;
+}
+.tag_box.inline li {
+  float: left;
+}
+/*Color Switcher*/
+#colorswitcher {
+  position: fixed;
+  /*display: none;*/
+
+  top: 200px;
+  left: 0;
+  background-color: #839496;
+  width: 36px;
+  padding: 4px;
+  z-index: 99999;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: 0;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 0 6px 6px 0;
+  -moz-border-radius: 0 6px 6px 0;
+  border-radius: 0 6px 6px 0;
+}
+#colorswitcher div.colorbox {
+  width: 30px;
+  height: 30px;
+  float: left;
+  cursor: pointer;
+  margin: 3px;
+  display: block;
+}
+#colorswitcher #dark {
+  background-color: #073642;
+}
+#colorswitcher #light {
+  background-color: #eee8d5;
+}
+#colorswitcher #none {
+  background-color: #fff;
+}
+
+/** styles for shiedman/works.git **/
+ul.nav-list .date {
+   color: #aaa;
+   font-family: Monaco, "Courier New", monospace;
+   font-size: 80%;
+}
+.footnotes li p {
+    font-size: 12px;
+}
+
+.content.lsize > p {
+    font-size: 18px;
+    line-height: 26px;
+}
+.content.lsize abbr {
+    border-width: 0 0 4px;
+}
+.page-header {
+    margin-bottom: 5px;
+}
